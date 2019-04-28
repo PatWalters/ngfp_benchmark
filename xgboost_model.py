@@ -58,7 +58,7 @@ def train_ng_model(infile_name):
         rd_pred = rd_xgb.predict(rd_x_test)
         rd_r2 = pearsonr(rd_pred, y_test)[0] ** 2
         rd_rmse = rmse(rd_pred, y_test)
-        res.append([infile_name.replace(".csv",""),ng_r2,rd_r2, ng_rmse, rd_rmse])
+        res.append([infile_name.replace(".csv","").replace("ngfp_data/",""),ng_r2,rd_r2, ng_rmse, rd_rmse])
     return res
 
 output = []
